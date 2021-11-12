@@ -7,3 +7,4 @@ Exam
 Answer
 Student
 Subscriber
+Quiz
