@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # allauth and dependencies
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -48,11 +49,17 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.telegram',
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.yahoo',
+    #to format question text
     'ckeditor',
     'ckeditor_uploader',
+    # for managing website data
     'django.contrib.flatpages',
     #allauth needs sites
     'django.contrib.sites',
+    #to interact with react
+    'corsheaders',
+    #api
+    'rest_framework',
 ]
 
 #for the sites app
@@ -93,6 +100,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #for react
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+#interact with react
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
 ]
 
 ROOT_URLCONF = 'compass.urls'

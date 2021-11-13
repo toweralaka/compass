@@ -53,6 +53,8 @@ my_secret.pyc
 *.txt
 *.pdf
 *.csv
+*.ico
+*.svg
 *.jpg
 *.jpeg
 *.docx
