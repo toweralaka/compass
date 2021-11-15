@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from decouple import config, Csv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -144,14 +145,14 @@ WSGI_APPLICATION = 'compass.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-old_DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-DATABASES = {
+oDATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('DB_NAME'),
@@ -161,6 +162,40 @@ DATABASES = {
         'PASSWORD': config('DB_PASSWORD')
     }
 }
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'standard': {
+#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         # this is what you see in runserver console
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'standard',
+#         },
+#         # this handler logs to file
+#         #▼▼▼▼ this is just a name so loggers can reference it
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             #  choose file location of your liking
+#             'filename': 'django.log',
+#             'formatter': 'standard'
+#         },
+#     },
+#     'loggers': {
+#         # django logger
+#         'django': {
+#             # log to console and file handlers
+#             'handlers': ['console', 'file'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),  # choose verbosity
+#         },
+#     },
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

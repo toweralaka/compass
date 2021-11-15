@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+.logo-link {
+  width: 100%;
+}
+.logo-img {
+  width: 70px;
+}
+.container-wrapper {
+  /* background-image: linear-gradient(to bottom right, rgb(131, 65, 192) 10%, rgb(196, 161, 228) 50%); */
+  /* background-color:rgb(196, 161, 228); */
+  min-height: 100vh;
+  /* margin: 0; */
+}
+.navbar {
+  background-color: rgba(120, 36, 199, 0.2)
+}
+.formImg {
+  width: 100%;
+}
+.homeForm {
+  min-height: 200px;
+  border-radius: 10px;
+    background-image: linear-gradient(to bottom right, rgb(131, 65, 192) 10%, rgb(196, 161, 228) 50%);
+
+}
